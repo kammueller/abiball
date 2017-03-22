@@ -1,0 +1,4 @@
+# Nur lokaler Zugriff:
+#RewriteEngine On
+#RewriteCond %{HTTP_REFERER} !^content.abiball.kammueller.eu
+#RewriteRule /* content.abiball.kammueller.eu [R,L]

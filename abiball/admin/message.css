@@ -1,0 +1,31 @@
+.error {
+	position: relative;
+	width: 95%;
+	background: rgba(255,0,0, 0.5);
+	border: red solid 2px;
+	display: none;
+	margin: 3px;
+}
+.success {
+	position: relative;
+	width: 95%;
+	background: rgba(39, 99, 37, 0.65);
+	border: green solid 2px;
+	display: none;
+	margin: 3px;
+}
+#message {
+	display: block;
+	width:  40%;
+	left: 30%;
+	top: 120px;
+	z-index: 2;
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 14pt;
+	border: white solid 3px;
+	color: #FFFFFF;
+	font-family: arapeykursiv, sans-serif;
+	position: fixed;
+}

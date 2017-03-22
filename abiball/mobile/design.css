@@ -1,0 +1,97 @@
+/*
+ * DESIGN
+ * fuer das mobile Layout
+ */
+
+body {
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14pt;
+}
+
+h1 {
+	text-align: center;
+}
+input {
+	font-size: 14pt;
+}
+
+
+/* HEADER-Bild */
+#header {
+	width: 100%;
+	height: auto;
+}
+
+
+/* MEN� */
+	/* DIVs */
+	#menueHeader {
+		width: 100%;
+		background: #252525;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+	
+	#menueContent {
+		display: none;
+		width: 100%;
+		background: #252525;
+		margin-top: -2px;
+		padding-bottom: 5px;
+		border-top: #777 2px solid;
+	}
+	
+	/* Text*/
+	#menueTitle {
+		padding: 5px;
+		font-weight: bold;
+		color: #CCC;
+		font-size: 14pt;
+		margin: 0;
+	}
+	
+	#menueList {
+		padding: 5px;
+		margin: 2px;
+		margin-left: 10px;
+		color: #CCC;
+		font-size: 13pt;
+	}
+	#menueList:hover {
+		padding: 5px;
+		margin: 2px;
+		margin-left: 10px;
+		margin-right: 10px;
+		background: #111;
+		border-radius: 5px;
+		color: #CCC;
+		font-size: 13pt;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+
+/* FOOTER */
+	#footer {
+		width: 100%;
+		background: #252525;
+		color: #CCC;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		padding-top: 5px;
+	}
+	
+	#user_link {
+		color: #FF8700;
+		text-decoration: underline;
+	}
+	#user_link:hover {
+		color: #FF8700;
+		text-decoration: none;
+	}
+	#user_link:visited {
+		color: #FF8700;
+		text-decoration: underline;
+	}

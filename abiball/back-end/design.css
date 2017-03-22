@@ -1,0 +1,191 @@
+/*
+ * DESIGN
+ * grobe Richtlinien, genaue Platzierungen werden per JS vorgenommen
+ * oben 130 px platz, unten 80 px
+*/
+
+body {
+	margin: 0;
+}
+
+#bg {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+#backgroundimage {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+}
+
+/* HEADER */
+#header {
+	color: #EEEEEE;
+	position: fixed;
+	top: 15px;
+	left: 35px;
+	margin: 0;
+	/* width: 423px; - bloß ca, Fehler in Opera*/
+	height: 91px;
+	font-family: arapey,sans-serif;
+	cursor: pointer; 
+}
+#header_title {
+	font-size: 42pt;
+}
+#header_line {
+	width: 100%;
+	color: #EEEEEE;
+	margin: 0;
+	height: 1px;
+}
+#header_sub {
+	font-variant: small-caps;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+
+/* USER ÜBERSICHT */
+#user {
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: rgba(24, 24, 24, 0.95);
+	color: #EEEEEE;
+	padding: 5px; 
+	text-align: right;
+	border-bottom: #CCC solid;
+}
+#user_1  /* Das Dreieck */{
+	width: 0;
+	height: 0;
+	border-left: 52px solid transparent;
+	border-right: 38px solid rgba(24, 24, 24, 0.95);
+	position: fixed;
+	right: 300px;
+	top: 0;
+	border-bottom: 90px solid transparent;
+}
+#user_2 /* Dreieck-Rahmen */ {
+	position: absolute;
+	height:50px;
+	width:40px;
+	top: -2px;
+	left: 1px;
+}
+#user_3 /* Der User-text */ {
+	font-size: 12pt;
+	position: relative;
+	right: 10px;
+    font-family: arapey,sans-serif;
+}
+#user_link {
+	color: #FF8700;
+	text-decoration: underline;
+}
+#user_link:hover {
+	color: #FF8700;
+	text-decoration: none;
+}
+#user_link:visited {
+	color: #FF8700;
+	text-decoration: underline;
+}
+
+
+
+/* WRAPPER */
+#wrapper {
+	width: 80%;
+	height: 60%;
+	position: fixed;
+	top: 130px;
+	left: 10%;
+	background: rgba(242, 242, 242, 0.93);
+
+    font-size: 14pt;
+    font-family: arapey, sans-serif;
+    overflow: auto;
+    padding: 5px;
+}
+
+/* CONTENT */
+h1 {
+	font-size: 24pt;
+	font-family: arapeykursiv, sans-serif;
+	margin: 0;
+}
+h2 {
+	font-size: 20pt;
+	font-family: arapeykursiv, sans-serif;
+	margin: 0;
+}
+p {
+	margin: 0;
+}
+table {
+	margin: 3px;
+}
+form {
+	margin: 3px;
+}
+#input {
+	font-size: 12pt;
+    font: Arial, sans-serif;
+	font-style: italic;
+	color: #555;
+}
+#pass {
+	font-size: 12pt;
+}
+#submit {
+	font-size: 14pt;
+}
+
+
+/* FOOTER */
+#footer {
+	background: url('/back-end/img/menue.jpg');
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+	height: 35px;
+	font-family: arapey, sans-serif;
+}
+
+#menue {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 3px #2A2A2A;
+	font-family: arapey, sans-serif;
+}
+#menue:hover {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 2px rgba(24,24,24,0.5);
+	font-family: arapey, sans-serif;
+}
+#menue:visited {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 3px #2A2A2A;
+	font-family: arapey, sans-serif;
+}
+
+
+/* ### GOOGLE ADSENSE ### */
+.abiball-2 { height: 220px; width: 120px; }
+@media (min-height: 520px) { .abiball-2 { height: 290px; width: 150px; } }
+@media (min-height: 620px) { .abiball-2 { height: 390px; width: 200px; } }
+@media (min-height: 720px) { .abiball-2 { height: 490px; width: 250px; } }
+@media (min-height: 820px) { .abiball-2 { height: 590px; width: 300px; } }

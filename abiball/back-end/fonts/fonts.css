@@ -1,0 +1,16 @@
+/*
+ * SCHRIFTARTEN
+ * die zum Einsatz kommen
+*/
+
+	
+/* STANDARD */
+	/* arapey */
+	@font-face {
+		font-family: 'arapey';
+		src: url('arapey.regular.ttf');
+	}
+	@font-face {
+		font-family: 'arapeykursiv';
+		src: url('arapey.italic.ttf');
+	}

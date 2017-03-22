@@ -1,0 +1,169 @@
+/*
+ * DESIGN
+ * grobe Richtlinien, genaue Platzierungen werden per JS vorgenommen
+ * oben 130 px platz, unten 80 px
+*/
+
+body {
+	margin: 0;
+}
+
+#bg {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+#backgroundimage {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+}
+
+/* HEADER */
+#header {
+	color: #EEEEEE;
+	position: fixed;
+	top: 15px;
+	left: 35px;
+	margin: 0;
+	/* width: 423px; - blo� ca, Fehler in Opera*/
+	height: 91px;
+	font-family: arapey, sans-serif;
+}
+#header_title {
+	font-size: 42pt;
+}
+#header_line {
+	width: 100%;
+	color: #EEEEEE;
+	margin: 0;
+	height: 1px;
+}
+#header_sub {
+	font-variant: small-caps;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+
+/* USER �BERSICHT */
+#user {
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: rgba(24, 24, 24, 0.95);
+	color: #EEEEEE;
+	padding: 5px; 
+	text-align: right;
+	border-bottom: #CCC solid;
+}
+#user_1  /* Das Dreieck */{
+	width: 0;
+	height: 0;
+	border-left: 52px solid transparent;
+	border-right: 38px solid rgba(24, 24, 24, 0.95);
+	position: fixed;
+	right: 300px;
+	top: 0;
+	border-bottom: 90px solid transparent;
+}
+#user_2 /* Dreieck-Rahmen */ {
+	position: absolute;
+	height:50px;
+	width:40px;
+	top: -2px;
+	left: 1px;
+}
+#user_3 /* Der User-text */ {
+	font-size: 12pt;
+	position: relative;
+	right: 10px;
+}
+#user_link {
+	color: #FF8700;
+	text-decoration: underline;
+}
+#user_link:hover {
+	color: #FF8700;
+	text-decoration: none;
+}
+#user_link:visited {
+	color: #FF8700;
+	text-decoration: underline;
+}
+
+
+
+/* WRAPPER */
+#wrapper {
+	position: fixed;
+	top: 130px;
+	margin: auto;
+	background: rgba(24, 24, 24, 0.95);
+	color: #EEEEEE;
+	padding: 5px; 
+	text-align: center;
+	border: #CCC solid;
+    font-size: 14pt;
+    font-family: arapey, sans-serif;
+}
+
+#ad {
+	position: fixed;
+	top: 130px;
+	right: 10%;
+	background: white;
+}
+
+
+/* CONTENT */
+p {
+	font-size: 14pt;
+	font-family: arapey, sans-serif;
+	margin: 0;
+}
+
+a {
+    color: #FF8700;
+    text-decoration: underline;
+}
+a:visited {
+    color: #FF8700;
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+#footer {
+	background: url('/back-end/img/menue.jpg');
+	position: fixed;
+	bottom: 0;
+	height: 35px;
+	overflow: hidden;
+}
+
+#menue {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 3px #2A2A2A;
+}
+#menue:hover {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 2px rgba(24,24,24,0.5);
+	/* alternativ in fett und ohne ersten schatten - aber dann glitch */
+	cursor: pointer;
+}
+#menue:visited {
+	color: #000;
+	text-decoration: none;
+	font-size: 20pt;
+	text-shadow: 2px 1px 3px #2A2A2A;
+}

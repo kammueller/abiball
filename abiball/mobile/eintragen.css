@@ -1,0 +1,135 @@
+/*
+ * DESIGN
+ * grobe Richtlinien, genaue Platzierungen werden per JS vorgenommen
+ * oben 130 px platz, unten 80 px
+*/
+
+body {
+	margin: 0px;
+}
+
+#bg {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+#backgroundimage {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+}
+
+/* HEADER */
+#header {
+	color: #EEEEEE;
+	position: fixed;
+	top: 15px;
+	left: 35px;
+	margin: 0;
+	/* width: 423px; - bloﬂ ca, Fehler in Opera*/
+	height: 91px;
+	font-family: arapey;
+}
+#header_title {
+	font-size: 42pt;
+}
+#header_line {
+	width: 100%;
+	color: #EEEEEE;
+	margin: 0;
+	height: 1px;
+}
+#header_sub {
+	font-variant: small-caps;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+
+/* WRAPPER */
+#wrapper {
+	width: 80%;
+	height: 60%;
+	position: fixed;
+	top: 130px;
+	left: 10%;
+	background: rgba(242, 242, 242, 0.93);
+}
+
+
+#contentA{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	overflow: auto;
+	margin: 10px;
+}
+#contentB{
+	position: absolute;
+	left: 50%;
+	width: 40%;
+	height: 100%;
+	overflow: auto;
+	margin: 10px;
+}
+
+
+/* CONTENT */
+#agb{
+	max-height: 80%;
+	width: 100%;
+	overflow: auto;
+}
+h1 {
+	font-size: 24pt;
+	font-family: arapeykursiv;
+	margin: 0;
+}
+p {
+	font-size: 14pt;
+	font-family: arapey;
+	margin: 0;
+}
+form {
+	font-size: 14pt;
+	font-family: arapey;
+	margin: 3px;
+}
+.smallError {
+	position: relative;
+	width: 50%;
+	background: rgba(255,0,0, 0.5);
+	border: red solid 2px;
+	display: none;
+	margin: 3px;
+}
+
+/* FEHLER */
+.error {
+	position: relative;
+	width: 95%;
+	background: rgba(255,0,0, 0.5);
+	border: red solid 2px;
+	display: none;
+	margin: 3px;
+}
+#message {
+	display: block;
+	width:  40%;
+	left: 30%;
+	top: 120px;
+	z-index: 2;
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 20pt;
+	border: white solid 3px;
+	color: #FFFFFF;
+	font-family: arapeykursiv;
+}
+

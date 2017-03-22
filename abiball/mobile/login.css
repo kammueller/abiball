@@ -1,0 +1,10 @@
+
+.error {
+	position: relative;
+	width: 95%;
+	background: rgba(255,0,0, 0.5);
+	border: red solid 2px;
+	display: none;
+	margin: 3px;
+}
+
