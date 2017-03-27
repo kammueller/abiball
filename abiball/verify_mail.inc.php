@@ -8,7 +8,7 @@ if (!(isset($db_link) && isset($Vorname))) { echo "Schwerwiegender Fehler."; exi
 // User-ID abfragen
 	$sql = "SELECT * FROM `abi_user` WHERE `Vorname` LIKE '$Vorname' AND `Nachname` LIKE '$Nachname' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$id = $result['id'];
 // Verifizierungslink erstellen
 	$verify = md5(rand(999, 999999));

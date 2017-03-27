@@ -20,7 +20,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 	$del = mysqli_real_escape_string( $db_link, esc($_GET["id"]));
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$del' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$VornameA = $result['Vorname'];
 	$NachnameA = $result['Nachname'];
 	

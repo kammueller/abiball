@@ -21,7 +21,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 	$Nummer = mysqli_real_escape_string( $db_link, esc($_POST["nr"]) );
 	$sql = "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	// Darf die Bestellung gelöscht werden?
 		//Ist die Bestellung bezahlt?
 		if ( $result['Bezahlt'] == 'true' )

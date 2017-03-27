@@ -78,14 +78,14 @@ $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_news` ORDER BY `edit_time` 
 	<p>Entweder einen Artikel bearbeiten (siehe Auswahl weiter unten) oder <a href="blog_create.php">einen neuen Blog-Eintrag erstellen</a>
 	';
 	
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 	// Admin raussuchen
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['user_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$writer = $data['Vorname']." ".$data['Nachname'];
 	// latest edit
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['edit_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$editor = $data['Vorname']." ".$data['Nachname'];
 	// Text vorbereiten
 		$Text  = encode(esc($datensatz['Teaser']));

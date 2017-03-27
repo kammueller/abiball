@@ -22,7 +22,7 @@
 	
 	$sql = "SELECT * FROM `abi_user` WHERE `Nachname` LIKE '$Nachname' AND `Vorname` LIKE '$Vorname' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	if ($datensatz['id'] == "") { // Kein gültiger Nutzer
         $message = encode($error_pw);
 /* DIE FOLGENDE ELSE-IF-SCHLEIFE IST HIER NUR FÜR DAS EIGENE PROJEKT!! */
@@ -95,7 +95,7 @@
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$user_id'");
 				$menge = mysqli_num_rows($result);
 				if ($menge == 1) {
-					$adminCheck = mysqli_fetch_array($result, MYSQL_ASSOC);
+					$adminCheck = mysqli_fetch_array($result, MYSQLI_ASSOC);
 					$zugriff = $adminCheck['rechte']; }
 		
 				break;

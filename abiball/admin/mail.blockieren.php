@@ -32,7 +32,7 @@ if ( ($begr == "Bitte hier Begründung angeben! Kopie wird an Webmaster verschic
     }
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$weg' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$MailE = $result['Mail'];
 	$VornameE = $result['Vorname'];
 	$NachnameE = $result['Nachname'];

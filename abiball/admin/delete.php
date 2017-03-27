@@ -21,7 +21,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ( $zugriff 
 	$del = mysqli_real_escape_string( $db_link, esc($_GET["id"]));
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$del' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$Vorname = $result['Vorname'];
 	$Nachname = $result['Nachname'];
 	// Darf der Account gel�scht werden?
@@ -32,7 +32,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ( $zugriff 
 		//Ist der Account schon 7 Tage blockiert?
 		$sql = "SELECT * FROM `abi_blocked` WHERE `user_id` = '$del'";
 		$db_erg = mysqli_query($db_link, $sql);
-		$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+		$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 		$blockdate = strtotime( $result['datum'] );
 		$early_del = $blockdate + 60*60*24*7;  // fr�hestes Blockierdatum
 		if ( mktime() < $early_del ) {

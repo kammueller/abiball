@@ -14,7 +14,7 @@ include ("../back-end/txt/pages/karten2.php");
 	$bestellt = false;
 	$sql = "SELECT * FROM `abi_bestellung` WHERE `user_id` = ".$user_id;
 	$result = mysqli_query($db_link, $sql);
-	while ( $datensatz = mysqli_fetch_array($result, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($result, MYSQLI_ASSOC) ) {
 		if ( $datensatz['datum'] == date("Y-m-d") ) { $bestellt = true; }
 	}
 	if ($bestellt) {
@@ -35,7 +35,7 @@ include ("../back-end/txt/pages/karten2.php");
 	// Noch Karten verfügbar?
 		$sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` < ".time()." AND `uebrig` > 0 AND `reserviert` <= `uebrig` LIMIT 1;";
 		$db_erg = mysqli_query($db_link, $sql);
-		$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+		$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 		$timestamp = $datensatz['timestamp'];
 		$menge = mysqli_num_rows($db_erg);
 		if ($menge == "1") {

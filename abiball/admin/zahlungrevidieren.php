@@ -19,7 +19,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 	$Nummer = mysqli_real_escape_string( $db_link, esc($_GET['nr']));
 	// Datum, Kartenanzahl
 	$sql = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'");
-	$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 	$id = $datensatz['user_id'];
 	$KartenAnz = 0;
 		$k1 = $datensatz['karte1'];
@@ -39,7 +39,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 			$Zahltag = date_format($Date, 'd.m.Y');
 	// Username
 	$sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-	$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 	$user = $datensatz['Vorname']." ".$datensatz['Nachname'];
 	
 //Content

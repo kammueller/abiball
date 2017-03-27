@@ -23,7 +23,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
 
         // Bestellung heraussuchen
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $id = $datensatz['user_id'];
             $wunsch = $datensatz['Wunschkarten'];
             $Kommi = $datensatz['Kommentar'];
@@ -48,35 +48,35 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
             $k1 = $datensatz['karte1'];
             if ($k1 != 0) { // Vorname und Nachname ziehen
                 $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k1';");
-                $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $VorN1 = $karte['Vorname'];
                 $NachN1 = $karte['Nachname'];
                 $KartenAnz = 1;	}
             $k2 = $datensatz['karte2'];
             if ($k2 != 0) { // Vorname und Nachname ziehen
                 $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k2';");
-                $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $VorN2 = $karte['Vorname'];
                 $NachN2 = $karte['Nachname'];
                 $KartenAnz = 2; }
             $k3 = $datensatz['karte3'];
             if ($k3 != 0) { // Vorname und Nachname ziehen
                 $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k3';");
-                $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $VorN3 = $karte['Vorname'];
                 $NachN3 = $karte['Nachname'];
                 $KartenAnz = 3; }
             $k4 = $datensatz['karte4'];
             if ($k4 != 0) { // Vorname und Nachname ziehen
                 $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k4';");
-                $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $VorN4 = $karte['Vorname'];
                 $NachN4 = $karte['Nachname'];
                 $KartenAnz = 4; }
 
         // Besteller herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $user = $datensatz['Vorname']." ".$datensatz['Nachname'];
             $user_vn = $datensatz['Vorname'];
 
@@ -103,11 +103,11 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
                 // Falls bezahlt wurde
                 // Admin herausfinden, ...
                     $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$admin_id'");
-                    $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+                    $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                     $admin = $datensatz['Vorname']." ".$datensatz['Nachname'];
                     $admin_vn = $datensatz['Vorname'];
                     $sql = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$admin_id'");
-                    $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+                    $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                     switch ($datensatz['rechte']) {
                         case 'all':
                             $admin_rights = "alle verf&uuml;gbaren Rechte";
@@ -184,7 +184,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
                     <th><a href='?sort=Bezahlt'>Bezahlt?</a></th>
                     <th>Kommentar vorhanden?</th>
                 </tr>";
-            while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+            while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
                 // Daten sammeln
                 $Nummer = $datensatz['BestellNr'];
                 $id = $datensatz['user_id'];
@@ -205,39 +205,39 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
                 $k1 = $datensatz['karte1'];
                 if ($k1 != 0) { // Vorname und Nachname ziehen
                     $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k1';");
-                    $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                    $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     $VorN1 = $karte['Vorname'];
                     $NachN1 = $karte['Nachname'];
                     $KartenAnz = 1;	}
                 $k2 = $datensatz['karte2'];
                 if ($k2 != 0) { // Vorname und Nachname ziehen
                     $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k2';");
-                    $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                    $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     $VorN2 = $karte['Vorname'];
                     $NachN2 = $karte['Nachname'];
                     $KartenAnz = 2; }
                 $k3 = $datensatz['karte3'];
                 if ($k3 != 0) { // Vorname und Nachname ziehen
                     $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k3';");
-                    $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                    $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     $VorN3 = $karte['Vorname'];
                     $NachN3 = $karte['Nachname'];
                     $KartenAnz = 3; }
                 $k4 = $datensatz['karte4'];
                 if ($k4 != 0) { // Vorname und Nachname ziehen
                     $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k4';");
-                    $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+                    $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     $VorN4 = $karte['Vorname'];
                     $NachN4 = $karte['Nachname'];
                     $KartenAnz = 4; }
                 // Falls bezahlt: Admin herausfinden
                 if ($Bezahlt == 'true') {
                     $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$admin_id'");
-                    $userData = mysqli_fetch_array($sql, MYSQL_ASSOC);
+                    $userData = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                     $admin = $userData['Vorname']." ".$userData['Nachname'];
                     $admin_vn = $userData['Vorname'];
                     $sql = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$admin_id'");
-                    $adminData = mysqli_fetch_array($sql, MYSQL_ASSOC);
+                    $adminData = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                     switch ($adminData['rechte']) {
                         case 'all':
                             $admin_rights = "alle verf&uuml;gbaren Rechte";
@@ -253,7 +253,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
                     $KommiDa = "nope"; } else { $KommiDa = "japp"; }
                 // Besteller herausfinden
                 $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-                $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+                $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                 $user = $datensatz['Vorname']." ".$datensatz['Nachname'];
                 $user_vn = $datensatz['Vorname'];
 

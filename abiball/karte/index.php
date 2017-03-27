@@ -13,7 +13,7 @@ include ("../back-end/txt/karten_links.php");
 // Gibt es übrige Karten, die jetzt schon freigeschaltet sind?
 	$sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` < ".time()." AND `uebrig` > 0 AND `reserviert` < `uebrig` LIMIT 1;";
 	$db_erg = mysqli_query($db_link, $sql);
-	$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$timestamp = $datensatz['timestamp'];
 	$menge = mysqli_num_rows($db_erg);
 
@@ -59,7 +59,7 @@ include ("../back-end/txt/karten_links.php");
 			$sql = "SELECT * FROM `abi_bestellung` WHERE `user_id` = ".$user_id;
 			$result = mysqli_query($db_link, $sql);
 			
-			while ( $datensatz = mysqli_fetch_array($result, MYSQL_ASSOC) ) {
+			while ( $datensatz = mysqli_fetch_array($result, MYSQLI_ASSOC) ) {
 				if ( $datensatz['datum'] == date("Y-m-d") ) { $bestellt = true; }
 			}
 			if ($bestellt) {

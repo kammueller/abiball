@@ -17,7 +17,7 @@ include('../back-end/txt/mail.php');
 	$rehab = mysqli_real_escape_string( $db_link, esc($_GET["id"]));
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$rehab' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$MailE = $result['Mail'];
 	$VornameE = utf8_decode($result['Vorname']);
 	$NachnameE = utf8_decode($result['Nachname']);

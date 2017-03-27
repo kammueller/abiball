@@ -12,7 +12,7 @@ $id = mysqli_real_escape_string( $db_link, esc($_POST['user']));
 
 // User-Daten ziehen
 	$sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-	$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 	$VornameE = $datensatz['Vorname'];
 	$NachnameE = $datensatz['Nachname'];
 	$MailE = $datensatz['Mail'];

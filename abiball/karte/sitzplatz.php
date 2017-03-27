@@ -19,7 +19,7 @@ $table_drop = "";
  * Tabelle für die Tische
  */
 $table_table = "";
-while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
     $t_Nummer = $datensatz["Nummer"];
     $t_Plaetze = $datensatz["Plaetze"];
     $t_Frei = $datensatz["Frei"];
@@ -51,11 +51,11 @@ echo '<h1 id="title">Sitzplatzreservierung</h1>
 	$sql = "SELECT * FROM `abi_bestellung`  WHERE `user_id` = '$user_id';";
 	$db_erg = mysqli_query($db_link, $sql);
     $zaehl = 1;
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 		$k1 = $datensatz['karte1'];
 			if ($k1 != 0) { // Vorname und Nachname ziehen
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k1';");
-				$karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$VorN1 = $karte['Vorname'];
 				$NachN1 = $karte['Nachname'];
                 $BisherZ = $karte['Tisch']; if ($BisherZ == "") {$Bisher = "--- Bitte wählen ---";} else {$Bisher = "reserviert: Tisch ".$BisherZ;}
@@ -67,7 +67,7 @@ echo '<h1 id="title">Sitzplatzreservierung</h1>
 		$k2 = $datensatz['karte2'];
 			if ($k2 != 0) { // Vorname und Nachname ziehen
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k2';");
-				$karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$VorN2 = $karte['Vorname'];
 				$NachN2 = $karte['Nachname'];
                 $BisherZ = $karte['Tisch']; if ($BisherZ == "") {$Bisher = "--- Bitte wählen ---";} else {$Bisher = "reserviert: Tisch ".$BisherZ;}
@@ -79,7 +79,7 @@ echo '<h1 id="title">Sitzplatzreservierung</h1>
 		$k3 = $datensatz['karte3'];
 			if ($k3 != 0) { // Vorname und Nachname ziehen
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k3';");
-				$karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$VorN3 = $karte['Vorname'];
 				$NachN3 = $karte['Nachname'];
                 $BisherZ = $karte['Tisch']; if ($BisherZ == "") {$Bisher = "--- Bitte wählen ---";} else {$Bisher = "reserviert: Tisch ".$BisherZ;}
@@ -91,7 +91,7 @@ echo '<h1 id="title">Sitzplatzreservierung</h1>
 		$k4 = $datensatz['karte4'];
 			if ($k4 != 0) { // Vorname und Nachname ziehen
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k4';");
-				$karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$VorN4 = $karte['Vorname'];
 				$NachN4 = $karte['Nachname'];
                 $BisherZ = $karte['Tisch']; if ($BisherZ == "") {$Bisher = "--- Bitte wählen ---";} else {$Bisher = "reserviert: Tisch ".$BisherZ;}

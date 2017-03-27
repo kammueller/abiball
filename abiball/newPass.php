@@ -39,7 +39,7 @@ $passwortAlt = mysqli_real_escape_string( $db_link, esc($_POST['oldPass'] ) );
 	// stimmt das bisherige Passwort?
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$user_id' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	if( password_verify($passwortAlt, $datensatz['password']) ) {
 		$sql = "UPDATE `abi_user` SET `password` = '$passwort' WHERE `id` = '$user_id'";
 		$db_erg = mysqli_query($db_link, $sql);

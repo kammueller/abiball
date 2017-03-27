@@ -23,7 +23,7 @@ if (isset ($_GET['id'])) {
         $id = 0;
 	}
 }
-$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	
 
 
@@ -36,11 +36,11 @@ $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
 	echo '<h1>Blog-Edit - '.$datensatz['Titel'].'</h1>';
 	 // Admin raussuchen
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['user_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$writer = $data['Vorname']." ".$data['Nachname'];
 	 // latest edit
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['edit_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$editor = $data['Vorname']." ".$data['Nachname'];
 		
 	if ($prev) {

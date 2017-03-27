@@ -17,7 +17,7 @@ include('../back-end/txt/mail.php');
 
 $Nummer = mysqli_real_escape_string( $db_link, esc($_POST['nr']));
 $sql = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'");
-$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 if(!isset($datensatz)) { //keine gültige Nummer
     header("location: index.php"); exit;
 }
@@ -45,7 +45,7 @@ if (isset($mahnung)) {
 if ($access) {
     $sql = "SELECT * FROM `abi_user` WHERE `id` = '$id' LIMIT 1";
     $db_erg = mysqli_query($db_link, $sql);
-    $result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+    $result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
     $MailE = $result['Mail'];
     $VornameE = $result['Vorname'];
     $NachnameE = $result['Nachname'];

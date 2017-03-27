@@ -42,7 +42,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ($zugriff !=
 			<th>Bestelldatum</th>
 			<th>Bezahlt?</th>
 		</tr>";
-		while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+		while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 			// Daten sammeln
 				// von der Karte
 				$Nummer = $datensatz['id'];
@@ -52,12 +52,12 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ($zugriff !=
 				$karteNr = $datensatz['karteNr']; // Nur f�r intern
 				// Vom Besteller
 				$result = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id';");
-				$result = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$result = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$user = $result['Vorname']." ".$result['Nachname'];
 				// Von der Bestellung
                 $kartenSpalte = "karte".$karteNr;
 				$rech = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `user_id` = '$id' AND `".$kartenSpalte."` = '$Nummer';");
-				$rech = mysqli_fetch_array($rech, MYSQL_ASSOC);
+				$rech = mysqli_fetch_array($rech, MYSQLI_ASSOC);
 				$Bestellung = $rech['BestellNr'];
 				$Datum = $rech['datum'];
 					$Date = date_create($Datum);

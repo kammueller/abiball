@@ -16,7 +16,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
 	$Nummer = mysqli_real_escape_string( $db_link, esc($_GET['nr']));
 	// Datum, Kartenanzahl
 	$sql = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'");
-	$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 	if(!isset($datensatz)) { //keine gültige Nummer
 		echo "<h2>Zahlungseingang Kartenbestellung ".$Nummer."</h2>
 		Keine gültige Bestellnummer. <a href='index.php'>Zurück</a>."; include ('../back-end/design_gamma.inc.php'); exit;
@@ -37,7 +37,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
 		$Datum = date_format($Date, 'd.m.Y');
 	// Username
 	$sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-	$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 	$user = $datensatz['Vorname']." ".$datensatz['Nachname'];
 	
 //Content

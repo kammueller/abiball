@@ -13,7 +13,7 @@ if (isset ($_POST['id'])) {
 // Edit eines existierenden
 	$id =   mysqli_real_escape_string( $db_link, esc($_POST['id'] ) );
 	$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_news` WHERE `id` = '$id'");
-	$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$text_neu =   mysqli_real_escape_string( $db_link, esc($_POST['text'] ) );
 	$teaser_neu =  mysqli_real_escape_string( $db_link, esc($_POST['teaser'] ) );
 
@@ -23,7 +23,7 @@ if (isset ($_POST['id'])) {
 	
 	 // Admin raussuchen
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['user_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$writer = $data['Vorname']." ".$data['Nachname'];
 		
 		

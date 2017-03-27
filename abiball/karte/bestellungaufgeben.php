@@ -62,7 +62,7 @@ include ("../back-end/txt/karten_links.php");
 		$erklaerung = "keine Erklaerung"; }
 	// Die erste Karte muss für den Abiturienten sein
 	$result = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$user_id'");
-	$datensatz = mysqli_fetch_array($result, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	$VorN = $datensatz['Vorname']; $NachN = $datensatz['Nachname'];
 	if ( ($VorN1 != $VorN) OR ($NachN1 != $NachN) ) {
 		include('../back-end/design_alpha.inc.php');
@@ -86,7 +86,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN1', '$NachN1')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k1 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '1' WHERE `abi_karten`.`id` = '$k1'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen				
@@ -104,7 +104,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN1', '$NachN1')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k1 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '1' WHERE `abi_karten`.`id` = '$k1'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen	
@@ -112,7 +112,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN2', '$NachN2')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k2 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '2' WHERE `abi_karten`.`id` = '$k2'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen	
@@ -131,7 +131,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN1', '$NachN1')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k1 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '1' WHERE `abi_karten`.`id` = '$k1'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen	
@@ -139,7 +139,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN2', '$NachN2')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k2 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '2' WHERE `abi_karten`.`id` = '$k2'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -147,7 +147,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN3', '$NachN3')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k3 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '3' WHERE `abi_karten`.`id` = '$k3'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -166,7 +166,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN1', '$NachN1')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k1 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '1' WHERE `abi_karten`.`id` = '$k1'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen	
@@ -174,7 +174,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN2', '$NachN2')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k2 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '2' WHERE `abi_karten`.`id` = '$k2'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -182,7 +182,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN3', '$NachN3')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k3 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '3' WHERE `abi_karten`.`id` = '$k3'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -190,7 +190,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN4', '$NachN4')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k4 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '4' WHERE `abi_karten`.`id` = '$k4'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -209,7 +209,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN1', '$NachN1')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k1 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '1' WHERE `abi_karten`.`id` = '$k1'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen	
@@ -217,7 +217,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN2', '$NachN2')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k2 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '2' WHERE `abi_karten`.`id` = '$k2'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -225,7 +225,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN3', '$NachN3')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k3 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '3' WHERE `abi_karten`.`id` = '$k3'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen
@@ -233,7 +233,7 @@ include ("../back-end/txt/karten_links.php");
 				$sql= "INSERT INTO `abi_karten` (`user_id`, `karteNr`, `Vorname`, `Nachname`) VALUES ('$user_id', 'edit', '$VorN4', '$NachN4')";
 				$db_erg = mysqli_query($db_link, $sql); // Einf�gen, einzigartig durch "edit"
 				$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `karteNr` = 'edit'");
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$k4 = $datensatz['id']; // ID herausfiltern
 				$sql = "UPDATE `abi_karten` SET `karteNr` = '4' WHERE `abi_karten`.`id` = '$k4'";
 				$db_erg = mysqli_query($db_link, $sql); // karteNr richtigstellen

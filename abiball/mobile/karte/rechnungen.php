@@ -78,7 +78,7 @@ $pdf = new PDF('P', 'mm', 'A4'); // horizontales A4; Maße in mm
 $Nummern = "";
 
 // Für jede Bestellung eine Seite
-while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
     // Daten sammeln
     // (`BestellNr`, `user_id`, `karte1`, `karte2`, `karte3`, `karte4`, `Wunschkarten`, `AlternativAnzahl`, `Kommentar`, `datum`, `Bezahlt`)
     // Datenbankendaten
@@ -100,28 +100,28 @@ while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
     $k1 = $datensatz['karte1'];
     if ($k1 != 0) { // Vorname und Nachname ziehen
         $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k1';");
-        $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+        $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $VorN1 = $karte['Vorname'];
         $NachN1 = $karte['Nachname'];
     }
     $k2 = $datensatz['karte2'];
     if ($k2 != 0) { // Vorname und Nachname ziehen
         $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k2';");
-        $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+        $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $VorN2 = $karte['Vorname'];
         $NachN2 = $karte['Nachname'];
     }
     $k3 = $datensatz['karte3'];
     if ($k3 != 0) { // Vorname und Nachname ziehen
         $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k3';");
-        $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+        $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $VorN3 = $karte['Vorname'];
         $NachN3 = $karte['Nachname'];
     }
     $k4 = $datensatz['karte4'];
     if ($k4 != 0) { // Vorname und Nachname ziehen
         $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$k4';");
-        $karte = mysqli_fetch_array($result, MYSQL_ASSOC);
+        $karte = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $VorN4 = $karte['Vorname'];
         $NachN4 = $karte['Nachname']; }
 

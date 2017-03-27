@@ -17,7 +17,7 @@ include ('../back-end/txt/pages/karten1.php');
 	$karten_id = mysqli_real_escape_string( $db_link, esc($_POST['hergeben']));
 	// Deine Karte?!
 	$check = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `id` = '$karten_id';");
-	$datensatz = mysqli_fetch_array($check, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($check, MYSQLI_ASSOC);
 	if ($datensatz['user_id'] != $user_id) {
 		include('../back-end/design_alpha.inc.php');
 		include ('../back-end/design_beta.inc.php');		

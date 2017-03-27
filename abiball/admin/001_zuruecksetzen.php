@@ -41,7 +41,7 @@ $adminPW = mysqli_real_escape_string($db_link, esc($_POST["adminPW"]));
 if (password_verify($adminPW, '$2y$10$QSNghM4VUJzRi.dYRP5FeOyzbnL3oB6M0Q2qRAMVAorh0YUC2qkE. ')) {
     // Alle User per Mail informieren
     $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_user`;");
-    while ($datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC)) {
+    while ($datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)) {
         $VornameE = $datensatz['Vorname'];
         $NachnameE = $datensatz['Nachname'];
         $MailE = $datensatz['Mail'];

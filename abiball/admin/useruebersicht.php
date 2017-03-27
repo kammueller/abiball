@@ -29,7 +29,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
         // Daten sammeln
             // User herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $user = $datensatz['Vorname']." ".$datensatz['Nachname'];
             $user_vn = $datensatz['Vorname'];
             $mail = $datensatz['Mail'];
@@ -68,7 +68,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
                 $karten = "Es wurden noch keine Kartenbestellungen in Auftrag gegeben.<br>";
             } else {
                 $karten = "Folgende Bestellungen wurden in Auftrag gegeben: ";
-                while ( $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC) ) {
+                while ( $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC) ) {
                     $karten .= "<a href='bestelluebersicht.php?nr=".$datensatz['BestellNr']."'>".$datensatz['BestellNr']."</a> "; }
                 $karten .= "<br>
                 <a href='rechnungen.php?id=".$id."'>Alle Rechnungen als PDF</a><br>"; }
@@ -124,7 +124,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 					<th><a href='?sort=Mail'>Mail</a></th>
 					<th><a href='?sort=verified'>G&uuml;ltiger Account?</a></th><th>Account sperren</th>
 				</tr>";
-            while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+            while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
                 echo "<tr>";
                 echo "<td>".$datensatz['id']."</td>";
                 echo "<td>".$datensatz['Vorname']."</td>";

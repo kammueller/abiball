@@ -45,7 +45,7 @@ $db_erg = mysqli_query($db_link, $sql);
  * Dropdown für die Tische
  */
 $table_table = "";
-while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
     $t_Nummer = $datensatz["Nummer"];
     $t_Plaetze = $datensatz["Plaetze"];
     $t_Frei = $datensatz["Frei"];

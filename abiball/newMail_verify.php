@@ -17,7 +17,7 @@ $veri = mysqli_real_escape_string( $db_link, esc($_GET["v"]));
 
 $sql = "SELECT * FROM `abi_verify` WHERE `user_id` = '$id' LIMIT 1";
 $db_erg = mysqli_query($db_link, $sql);
-$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 $hash = $result['hash'];
 $funzt = mysqli_num_rows($db_erg);
 

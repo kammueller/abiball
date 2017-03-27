@@ -28,11 +28,11 @@
 	if (isset($_COOKIE["ID"])) { // falls kein Cookie gesetzt, wird dies übersprungen
 		$session_id = $_COOKIE["ID"];
 		$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_session` WHERE `id` = '$session_id'");
-		$sessionCheck = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+		$sessionCheck = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 		$user_id = $sessionCheck['user_id'];
 		// Vorname überprüfen
 		$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$user_id'");
-		$logInCheck = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+		$logInCheck = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 		$Vorname = $logInCheck['Vorname'];
 		$Nachname = $logInCheck['Nachname'];
 		$Mail = $logInCheck['Mail'];
@@ -56,7 +56,7 @@
 			$result = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$user_id'");
 			$menge = mysqli_num_rows($result);
 			if ($menge == 1) {
-				$adminCheck = mysqli_fetch_array($result, MYSQL_ASSOC);
+				$adminCheck = mysqli_fetch_array($result, MYSQLI_ASSOC);
 				$zugriff = $adminCheck['rechte']; }
 		}
 
@@ -64,9 +64,9 @@
     }
 	
 	
-	// ### VERALTETE RESERVIERUNGEN L�SCHEN ###
+	// ### VERALTETE RESERVIERUNGEN LOESCHEN ###
 		$gueltig1 = mysqli_query($db_link, "SELECT * FROM `abi_reservierung`;");
-		while ($gueltig2 = mysqli_fetch_array($gueltig1, MYSQL_ASSOC)) {
+		while ($gueltig2 = mysqli_fetch_array($gueltig1, MYSQLI_ASSOC)) {
 			if ( $gueltig2['ablauf'] < time() ) {
 			// Wenn das Ding abgelaufen is, wird gel�scht (ganz unten aber erst)
 				$besteller = $gueltig2['user_id'];
@@ -74,7 +74,7 @@
 			// die Reservierungsanzahl runtersetzen	
 				$sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` = ".$schub.";";
 				$resAr = mysqli_query($db_link, $sql);
-				$res = mysqli_fetch_array($resAr, MYSQL_ASSOC);
+				$res = mysqli_fetch_array($resAr, MYSQLI_ASSOC);
 				$resAlt = $res['reserviert'];
 				$resNeu = $resAlt - 2;
 				$sql = "UPDATE `abi_0_kartenfreischalt` SET `reserviert` = ".$resNeu." WHERE `timestamp` = ".$schub.";";

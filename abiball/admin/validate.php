@@ -32,7 +32,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if (!( ($zugrif
 		echo "
 		<table border=1>
 			<tr><th>Vorname</th><th>Nachname</th><th>Mail</th><th></th><th></th></tr>";
-		while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+		while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 			echo "<tr>";
 			echo "<td>".$datensatz['Vorname']."</td>";
 			echo "<td>".$datensatz['Nachname']."</td>";

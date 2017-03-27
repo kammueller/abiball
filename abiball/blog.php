@@ -16,10 +16,10 @@ $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_news` ORDER BY `edit_time` 
     '.encode($bausteine[0]).'
 	';
 	
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 	// Admin raussuchen
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['user_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$writer = $data['Vorname']." ".$data['Nachname'];
 	// Text vorbereiten
 		$Text  = encode(esc($datensatz['Teaser']));

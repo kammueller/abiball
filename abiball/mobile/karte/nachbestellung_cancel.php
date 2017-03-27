@@ -10,7 +10,7 @@ if ($loggedIn != "speak Friend and Enter") { $message = encode($error_login); in
 
  $sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` < ".time()." AND `uebrig` > 0 LIMIT 1;";
 	$resAr = mysqli_query($db_link, $sql);
-	$res = mysqli_fetch_array($resAr, MYSQL_ASSOC);
+	$res = mysqli_fetch_array($resAr, MYSQLI_ASSOC);
 		$resAlt = $res['reserviert'];
 		$resNeu = $resAlt + 2;
 		if ($resNeu > $res['uebrig'])

@@ -10,7 +10,7 @@ include ("../back-end/txt/mail.php");
 // Datenbank
 	$sql = "SELECT * FROM `abi_user` WHERE `id` = '$user_id' LIMIT 1";
 	$db_erg = mysqli_query($db_link, $sql);
-	$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+	$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$Mail = $result['Mail'];
 	$Vorname = $result['Vorname'];
 	$Nachname = $result['Nachname'];

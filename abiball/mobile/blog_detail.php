@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     // wenn keins gefragt ist, das aktuellste nehmen
     $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_news` LIMIT 1");
 }
-$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 
 
 
@@ -23,7 +23,7 @@ $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
     echo '<h1>Neuigkeiten - '.$datensatz['Titel'].'</h1>';
     // Admin raussuchen
     $data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['user_id']);
-    $data = mysqli_fetch_array($data, MYSQL_ASSOC);
+    $data = mysqli_fetch_array($data, MYSQLI_ASSOC);
     $writer = $data['Vorname']." ".$data['Nachname'];
     // Text vorbereiten
     $text_output  = encode(esc($datensatz['Text']), true);
@@ -38,7 +38,7 @@ $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
     if ($datensatz['edit_id'] != 0) {
         // latest edit
         $data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['edit_id']);
-        $data = mysqli_fetch_array($data, MYSQL_ASSOC);
+        $data = mysqli_fetch_array($data, MYSQLI_ASSOC);
         $editor = $data['Vorname']." ".$data['Nachname'];
         echo '<br>
             <p><i>Zuletzt bearbeitet: '.date("d. M Y - H:i", $datensatz['edit_time']).' - '.$editor.'</i></p>

@@ -62,10 +62,10 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 	// existierende Admins
 	echo "<table border=1>
 		<tr><th>id</th><th>Vorname</th><th>Nachname</th><th>Mail</th><th>Rechte</th><th>Account sperren</th></tr>";
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 		$admin_id = $datensatz['user_id'];
 		$result = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$admin_id'");
-		$data = mysqli_fetch_array($result, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		echo "<tr>";
 		echo "<td>".$admin_id."</td>";
 		echo "<td>".$data['Vorname']."</td>";
@@ -101,7 +101,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; } if ( $zugriff !
 	$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `verified` = 'true' ORDER BY `Nachname`");
 	echo "<form name='Neuer_Admin' action='adminuebersicht.php' method='post'>
 	<table> <tr> <td> <select name='id'>";		
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 		// Schon Admin?
 		$check = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '".$datensatz['id']."'");
 		if( ($menge = mysqli_num_rows($check)) == 0 ) {

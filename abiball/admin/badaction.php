@@ -38,7 +38,7 @@ if(!(isset($_POST["id"]) && isset($_POST["action"]))) {
 				// Daten sammeln
 				$sql = "SELECT * FROM `abi_user` WHERE `id` = '$del' LIMIT 1";
 				$db_erg = mysqli_query($db_link, $sql);
-				$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+				$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$MailE = $result['Mail'];
 				$VornameE = $result['Vorname'];
 				$NachnameE = $result['Nachname'];
@@ -52,7 +52,7 @@ if(!(isset($_POST["id"]) && isset($_POST["action"]))) {
 					//Ist der Account schon 7 Tage blockiert?
 					$sql = "SELECT * FROM `abi_blocked` WHERE `user_id` = '$del'";
 					$db_erg = mysqli_query($db_link, $sql);
-					$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+					$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 					$blockdate = strtotime( $result['datum'] );
 					$early_del = $blockdate + 60*60*24*7;  // frühestes Blockierdatum
 					if ( mktime() < $early_del ) {
@@ -128,19 +128,19 @@ if(!(isset($_POST["id"]) && isset($_POST["action"]))) {
 				// Daten sammeln
 				$sql = "SELECT * FROM `abi_user` WHERE `id` = '$del' LIMIT 1";
 				$db_erg = mysqli_query($db_link, $sql);
-				$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+				$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$MailE = $result['Mail'];
 				$VornameE = $result['Vorname'];
 				$NachnameE = $result['Nachname'];
 			// is der überhaupt noch Admin?
 				$nochAdmin = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$del'");
-				$check = mysqli_fetch_array($nochAdmin, MYSQL_ASSOC);
+				$check = mysqli_fetch_array($nochAdmin, MYSQLI_ASSOC);
 				if ($check['user_id'] == "") { $error = "Dieser Vorgang wurde bereits ausgeführt."; include ('index.inc.php'); exit; }
 				
 			// Admin-Eintrag löschen
 				$sql = "DELETE FROM `abi_admin` WHERE `user_id` = '$del'";
 				$db_erg = mysqli_query($db_link, $sql);
-				$db_erg = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+				$db_erg = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 			
 			// Nachricht senden
 				$empfaenger = utf8_decode($VornameE." ".$NachnameE)." <".$MailE.">";
@@ -191,11 +191,11 @@ if(!(isset($_POST["id"]) && isset($_POST["action"]))) {
 			} else {
 				
 				$sql = mysqli_query($db_link, "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer'");
-				$datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
 				$id = $datensatz['user_id'];
 				$sql = "SELECT * FROM `abi_user` WHERE `id` = '$id' LIMIT 1";
 				$db_erg = mysqli_query($db_link, $sql);
-				$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+				$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$MailE = $result['Mail'];
 				$VornameE = $result['Vorname'];
 				$NachnameE = $result['Nachname'];
@@ -252,11 +252,11 @@ if(!(isset($_POST["id"]) && isset($_POST["action"]))) {
 				// Daten sammeln
 				$sql = "SELECT * FROM `abi_bestellung` WHERE `BestellNr` = '$Nummer' LIMIT 1";
 				$db_erg = mysqli_query($db_link, $sql);
-				$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+				$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$id = $datensatz["user_id"];
 				$sql = "SELECT * FROM `abi_user` WHERE `id` = '$id' LIMIT 1";
 				$db_erg = mysqli_query($db_link, $sql);
-				$result = mysqli_fetch_array($db_erg, MYSQL_ASSOC);	
+				$result = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 				$MailE = $result['Mail'];
 				$VornameE = $result['Vorname'];
 				$NachnameE = $result['Nachname'];

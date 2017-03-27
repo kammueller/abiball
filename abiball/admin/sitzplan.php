@@ -68,7 +68,7 @@ $pdf = new PDF('P', 'mm', 'A4'); // horizontales A4; Maße in mm
     $pdf->SetFont('', '', '10');
 
     $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` ORDER BY `id`");
-    while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+    while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
         // Daten sammeln
         // von der Karte
         $Nummer = $datensatz['id'];
@@ -79,7 +79,7 @@ $pdf = new PDF('P', 'mm', 'A4'); // horizontales A4; Maße in mm
         $karteNr = $datensatz['karteNr']; // Nur f�r intern
         // Vom Besteller
         $result = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id';");
-        $result = mysqli_fetch_array($result, MYSQL_ASSOC);
+        $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $user = $result['Nachname'];
 
         $pdf->Cell(20,5,$Nummer,'TBR', 0, 'L');
@@ -108,7 +108,7 @@ $pdf->ln();
 $pdf->SetFont('', '', '10');
 
 $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_karten` ORDER BY `Tisch` ASC, `Nachname` ASC;");
-while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
     // Daten sammeln
     // von der Karte
     $Nummer = $datensatz['id'];
@@ -119,7 +119,7 @@ while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
     $karteNr = $datensatz['karteNr']; // Nur f�r intern
     // Vom Besteller
     $result = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id';");
-    $result = mysqli_fetch_array($result, MYSQL_ASSOC);
+    $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $user = $result['Nachname'];
 
     $pdf->Cell(20,5,$Tisch,'TBR', 0, 'L');

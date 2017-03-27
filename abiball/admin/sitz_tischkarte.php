@@ -42,7 +42,7 @@ $pdf = new PDF('L', 'mm', 'A5'); // vertikales A5; Maße in mm
 
 
 $db_erg = mysqli_query($db_link, "SELECT * FROM `abi_tische` ORDER BY `Nummer`");
-while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
     $pdf->AddPage();
     // Daten sammeln
     // vom Tisch
@@ -58,7 +58,7 @@ while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
 
     // Vom Besteller
     $result = mysqli_query($db_link, "SELECT * FROM `abi_karten` WHERE `Tisch` = '$Nummer';");
-    while ( $namenliste = mysqli_fetch_array($result, MYSQL_ASSOC) ) {
+    while ( $namenliste = mysqli_fetch_array($result, MYSQLI_ASSOC) ) {
         $VorN = $namenliste['Vorname'];
         $NachN = $namenliste['Nachname'];
         $pdf->Cell(0, 5, utf8_decode($VorN . ' ' . $NachN), 0, 0, 'C');

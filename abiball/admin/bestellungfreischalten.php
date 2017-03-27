@@ -71,7 +71,7 @@ if(isset($_POST['action'])) {
 // Gibt es übrige Karten, die jetzt schon freigeschaltet sind?
 	$sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` < ".time()." AND `uebrig` > 0 AND `reserviert` < `uebrig` LIMIT 1;";
 	$db_erg = mysqli_query($db_link, $sql);
-	$datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC);
+	$datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC);
 	$timestamp = $datensatz['timestamp'];
 	$menge = mysqli_num_rows($db_erg);
 	
@@ -121,7 +121,7 @@ if(isset($_POST['action'])) {
 	<table border=1>
 		<tr><th>Tag</th><th>Menge</th><th>davon sind &uuml;brig</th><th>momentan reserviert</th><th></th></tr>';
 	$db_erg = mysqli_query($db_link, "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` > 100");
-	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+	while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
 		echo '<tr><td>'.date("d.m.Y", $datensatz["timestamp"]).'</td><td>'.$datensatz["anzahl"].'</td><td>'.$datensatz["uebrig"].'</td><td>'.$datensatz["reserviert"].'</td>';
 		if ( mktime(date("d.m.Y", $datensatz["timestamp"])) < time() ) {
 			echo '<td><form  action="bestellungfreischalten.php" method="post">

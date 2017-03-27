@@ -31,7 +31,7 @@ if (isset ($_POST['titel'])) {
 		$writer = $Vorname." ".$Nachname;
 	 // latest edit
 		$data = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = ".$datensatz['edit_id']);
-		$data = mysqli_fetch_array($data, MYSQL_ASSOC);
+		$data = mysqli_fetch_array($data, MYSQLI_ASSOC);
 		$editor = $data['Vorname']." ".$data['Nachname'];
 		
 	if ($prev) {

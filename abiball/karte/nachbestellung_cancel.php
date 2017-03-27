@@ -12,7 +12,7 @@ $gueltig1 = mysqli_query($db_link, "SELECT * FROM `abi_reservierung` WHERE `user
 	// Löschen
     $sql = "SELECT * FROM `abi_0_kartenfreischalt` WHERE `timestamp` < ".time()." AND `uebrig` > 0 LIMIT 1;";
     $resAr = mysqli_query($db_link, $sql);
-    $res = mysqli_fetch_array($resAr, MYSQL_ASSOC);
+    $res = mysqli_fetch_array($resAr, MYSQLI_ASSOC);
 
     $resAlt = $res['reserviert'];
     $resNeu = $resAlt - 2;

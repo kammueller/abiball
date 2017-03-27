@@ -22,17 +22,17 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ($zugriff !
         // Daten sammeln
             // Grund und Datum herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_blocked` WHERE `user_id` = '$id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $admin_id = $datensatz['admin_id'];
             $date = $datensatz['datum'];
             $begr = $datensatz['Grund'];
             // Admin herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$admin_id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $admin = $datensatz['Vorname']." ".$datensatz['Nachname'];
             $admin_vn = $datensatz['Vorname'];
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_admin` WHERE `user_id` = '$admin_id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             switch ($datensatz['rechte']) {
                 case 'all':
                     $admin_rights = "alle verf&uuml;gbaren Rechte";
@@ -45,7 +45,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ($zugriff !
                     break; }
             // User herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $user = $datensatz['Vorname']." ".$datensatz['Nachname'];
             $user_vn = $datensatz['Vorname'];
 
@@ -73,7 +73,7 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ($zugriff !
         echo " <h2>Blockierungs-Protokoll</h2>
 		<table border=1>
 			<tr><th>Protokoll Nr.</th><th>User</th><th>Von dem Admin</th><th>Begr&uuml;ndung</th><th>Rehabilitieren</th></tr>";
-        while ( $datensatz = mysqli_fetch_array($db_erg, MYSQL_ASSOC) ) {
+        while ( $datensatz = mysqli_fetch_array($db_erg, MYSQLI_ASSOC) ) {
             // Grund und Datum herausfinden
             $admin_id = $datensatz['admin_id'];
             $user_id = $datensatz['user_id'];
@@ -81,11 +81,11 @@ if (!isset($zugriff)) { header('location: ../home.php'); exit; }  if ($zugriff !
             $begr = $datensatz['Grund'];
             // Admin herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$admin_id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $admin = $datensatz['Vorname']." ".$datensatz['Nachname'];
             // User herausfinden
             $sql = mysqli_query($db_link, "SELECT * FROM `abi_user` WHERE `id` = '$user_id'");
-            $datensatz = mysqli_fetch_array($sql, MYSQL_ASSOC);
+            $datensatz = mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $user = $datensatz['Vorname']." ".$datensatz['Nachname'];
 
             // Tabelle auflisten
