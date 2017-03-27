@@ -14,7 +14,7 @@ Anschließend wurde das Gesamte noch zu einem CMS umgebaut.
 
 ## Voraussetzungen & Installation
 Dieses Paket benötigt einen Server mit:
--	PHP5-Unterstützung 
+-	PHP5 oder PHP7-Unterstützung 
 -	Eine MySQL-Datenbank (im Optimalfall leer; alle Datenbanken haben das Präfix abi_)
 -	Eine HTTPS-Domain auf der der Inhalt läuft (dies muss ein Root-Verzeichnis sein)
 -	Eine Domain, auf die zugegriffen werden soll
