@@ -10,6 +10,8 @@ Angefangen habe ich mit einem rohen Login-System ohne jegliches Design, dazu kam
 Im Laufe der Zeit kamen das Design, die Möglichkeit, Nutzer zu erstellen und ein Blog-System dazu.
 Anschließend wurde das Gesamte noch zu einem CMS umgebaut.
 
+**Es gibt eine neu programmierte Version, die ein bisschen anders funktioniert, von Ludwig Stecher: https://github.com/Aloso/abiball**
+
 ## Voraussetzungen & Installation
 Dieses Paket benötigt einen Server mit:
 -	PHP5-Unterstützung 
