@@ -18,8 +18,7 @@ $query = "CREATE TABLE IF NOT EXISTS `abi_0_kartenfreischalt` (
 			  `anzahl` INT(3) NOT NULL,
 			  `uebrig` INT(3) NOT NULL,
 			  `reserviert` INT(3) NOT NULL,
-			  PRIMARY KEY (`timestamp`),
-			  KEY `timestamp` (`timestamp`)
+			  PRIMARY KEY (`timestamp`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 			";
 if (mysqli_query($db_link, $query)) {
@@ -59,7 +58,7 @@ $query = "CREATE TABLE IF NOT EXISTS `abi_bestellung` (
 			  `admin_id` INT(8) DEFAULT NULL,
 			  `BezArt` ENUM('bar','konto','sonstige') DEFAULT NULL COMMENT 'Art der Bezahlung',
 			  `BezKom` VARCHAR(128) DEFAULT NULL COMMENT 'Genauere Beschreibung der Bezahlung',
-			  `mahnung` DATE NULL DEFAULT NULL COMMENT 'Versanddatum der letzten Mahnung (wenn keine: NULL)',
+			  `mahnung` DATE DEFAULT NULL COMMENT 'Versanddatum der letzten Mahnung (wenn keine: NULL)',
 			  PRIMARY KEY (`BestellNr`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 			";
