@@ -178,7 +178,7 @@ $query = "CREATE TABLE IF NOT EXISTS `abi_user` (
 			  `reservierend` ENUM('true','false') DEFAULT NULL,
 			  `failed` INT(1) NOT NULL DEFAULT '0' COMMENT 'Falsche Login-Versuche in Reihe',
 			  PRIMARY KEY (`id`),
-			  UNIQUE KEY `username` (`password`)
+			  UNIQUE KEY `username` (`Vorname`, `Nachname`)
 			) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 			";
 if (mysqli_query($db_link, $query)) {
