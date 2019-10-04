@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+
+  abiball:
+    image: abiball
+    container_name: abiball
+    env_file:
+      - db.env
+    expose:
+      - "80"
+
+  database:
+    image: abiball-db
+    container_name: abiball-db
+    env_file:
+      - db.env
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "9906:3306"
+
