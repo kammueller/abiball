@@ -6,7 +6,7 @@
  * @TODO 50€ variabel machen?!
  */
 
-require __DIR__ . '../../vendor/autoload.php'
+require __DIR__ . '../../vendor/autoload.php';
 include('../back-end/logincheck.inc.php');
 header('Content-type: text/html; charset=utf-8');
 if (!isset($loggedIn)) {
