@@ -6,6 +6,8 @@
  * @TODO bearbeitung bauen
  */
 
+require __DIR__ . '../../../vendor/autoload.php';
+
 /** @var STRING $absender
  * Der Absender, automatisch aus Header-Data bestimmen!
  */
