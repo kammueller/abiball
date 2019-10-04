@@ -3,7 +3,9 @@
  * DER SITZPLAN
  * sortiert nach (Abiturienten-)Name, Tisch und Nr.
  */
+
 include('../back-end/logincheck.inc.php');
+require __DIR__ . '../../vendor/autoload.php';
 header ('Content-type: text/html; charset=utf-8');
 if (!isset($loggedIn)) { $message = encode($error_login); include ('../login.php'); exit; }
 if ($loggedIn != "speak Friend and Enter") { $message = encode($error_login); include ('../login.php'); exit; }
@@ -15,7 +17,6 @@ $sql = "SELECT * FROM `abi_bestellung`  WHERE `user_id` = '$user_id';";
 $db_erg = mysqli_query($db_link, $sql); // Unten wird dann für jede gespeicherte Bestellung eine Seite hinzugefügt
 
 // Header & Footer festlegen
-require('../fpdf/fpdf.php');
 class PDF extends FPDF
 {
     // Page header

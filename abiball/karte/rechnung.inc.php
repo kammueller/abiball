@@ -7,6 +7,8 @@
  */
 
 // include('/back-end/logincheck.inc.php');  nicht notwendig, da "INC"
+
+require __DIR__ . '../../vendor/autoload.php';
 header ('Content-type: text/html; charset=utf-8');
 if (!isset($loggedIn)) { $message = encode($error_login); include ('../login.php'); exit; }
 if ($loggedIn != "speak Friend and Enter") { $message = encode($error_login); include ('../login.php'); exit; }
@@ -25,7 +27,6 @@ include("../back-end/txt/pages/karten3.php");
 	$recht = utf8_decode(str_ireplace("%nZ%", "\n", $bausteine[7]));
 
 // Header & Footer festlegen
-require('../fpdf/fpdf.php');
 
 class PDF extends FPDF
 {

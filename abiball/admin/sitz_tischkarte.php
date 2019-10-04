@@ -3,6 +3,7 @@
  * TISCHKARTEN
  * für jeden einzelnen Tisch
  */
+require __DIR__ . '../../vendor/autoload.php';
 include('../back-end/logincheck.inc.php');
 header ('Content-type: text/html; charset=utf-8');
 if (!isset($loggedIn)) { $message = encode($error_login); include ('../login.php'); exit; }
@@ -18,7 +19,6 @@ $db_erg = mysqli_query($db_link, $sql); // Unten wird dann für jede gespeichert
 
 
 // Header & Footer festlegen
-require('../fpdf/fpdf.php');
 class PDF extends FPDF
 {
 
