@@ -1,0 +1,11 @@
+{
+  "name": "kammueller/abiball",
+  "license": "proprietary",
+  "description": "Eine Website zur Kartenbestellung & Organisation von Abibällen ",
+  "homepage": "https://github.com/kammueller/abiball",
+  "require": {
+    "php": "^7.0",
+    "phpmailer/phpmailer": "^6.1",
+    "setasign/fpdf": "^1.8"
+  }
+}
